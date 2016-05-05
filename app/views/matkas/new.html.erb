@@ -2,4 +2,36 @@
 
 <%= render 'form' %>
 
+<br>
+
+<p>Muokkaamisaika sekunneissa: <output id="result"></output></p>
+<button onclick="startWorker()">Käynnistä uudelleen</button> 
+<button onclick="stopWorker()">Pysäytä kello</button>
+
+<p><strong>HUOM:</strong> Internet Explorer 9 ja sitä edeltävät eivät tue web workereita</p>
+
+<script>
+<!-- mukaillen http://www.w3schools.com/html/html5_webworkers.asp !-->
+
+var w;
+window.onload = startWorker;
+function startWorker() {
+    if(typeof(Worker) !== "undefined") {
+        if(typeof(w) == "undefined") {
+            w = new Worker("<%=javascript_path "demo_workers.js" %>");
+        }
+        w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = event.data;
+        };
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+    }
+}
+
+function stopWorker() { 
+    w.terminate();
+    w = undefined;
+}
+</script>
+
 <%= link_to 'Back', matkas_path %>
