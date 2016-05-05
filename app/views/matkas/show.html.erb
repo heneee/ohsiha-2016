@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Mistä:</strong>
+  <%= @matka.mista %>
+</p>
+
+<p>
+  <strong>Mihin:</strong>
+  <%= @matka.mihin %>
+</p>
+
+<p>
+  <strong>Kulkuneuvo:</strong>
+  <%= @matka.kulkuneuvo %>
+</p>
+
+<p>
+  <strong>Lähtö:</strong>
+  <%= @matka.lahto %>
+</p>
+
+<p>
+  <strong>Paluu:</strong>
+  <%= @matka.paluu %>
+</p>
+
+<p>
+  <strong>Matkaseurue:</strong>
+  <%= @matka.matkaseurue %>
+</p>
+
+<p>
+  <strong>Lisätietoja:</strong>
+  <%= @matka.lisatietoja %> <br>
+  <a href="http://localhost:3000/matkas/<%=@matka.id%>.json"> Get data in JSON format</a>
+</p>
+
+
+<%= link_to 'Edit', edit_matka_path(@matka) %> |
+<%= link_to 'Back', matkas_path %> 

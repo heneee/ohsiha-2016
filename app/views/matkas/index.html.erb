@@ -1,0 +1,38 @@
+<h1>Matkapäiväkirja - listaus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mistä</th>
+      <th>Mihin</th>
+      <th>Kulkuneuvo</th>
+      <th>Lähtö</th>
+      <th>Paluu</th>
+      <th>Matkaseurue</th>
+      <th>Lisätietoja</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matkas.each do |matka| %>
+      <tr>
+        <td><%= matka.mista %></td>
+        <td><%= matka.mihin %></td>
+        <td><%= matka.kulkuneuvo %></td>
+        <td><%= matka.lahto %></td>
+        <td><%= matka.paluu %></td>
+        <td><%= matka.matkaseurue %></td>
+        <td><%= matka.lisatietoja %></td>
+        <td><%= link_to 'Show', matka %></td>
+        <td><%= link_to 'Edit', edit_matka_path(matka) %></td>
+        <td><%= link_to 'Destroy', matka, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<a href="http://localhost:3000/matkas.json"> Get data in JSON format</a>
+
+<br>
+<br>
+<%= link_to 'New Matka', new_matka_path %>

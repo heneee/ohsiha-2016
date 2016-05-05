@@ -1,0 +1,45 @@
+<%= form_for(@matka) do |f| %>
+  <% if @matka.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@matka.errors.count, "error") %> prohibited this matka from being saved:</h2>
+
+      <ul>
+      <% @matka.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mistä %><br>
+    <%= f.text_field :mista %>
+  </div>
+  <div class="field">
+    <%= f.label :mihin %><br>
+    <%= f.text_field :mihin %>
+  </div>
+  <div class="field">
+    <%= f.label :kulkuneuvo %><br>
+    <%= f.text_field :kulkuneuvo %>
+  </div>
+  <div class="field">
+    <%= f.label :lähtö %><br>
+    <%= f.date_select :lahto %>
+  </div>
+  <div class="field">
+    <%= f.label :paluu %><br>
+    <%= f.date_select :paluu %>
+  </div>
+  <div class="field">
+    <%= f.label :matkaseurue %><br>
+    <%= f.text_area :matkaseurue %>
+  </div>
+  <div class="field">
+    <%= f.label :lisätietoja %><br>
+    <%= f.text_area :lisatietoja %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

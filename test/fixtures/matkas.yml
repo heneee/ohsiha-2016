@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mista: MyString
+  mihin: MyString
+  kulkuneuvo: MyString
+  lahto: 2016-03-23
+  paluu: 2016-03-23
+  matkaseurue: MyText
+  lisatietoja: MyText
+
+two:
+  mista: MyString
+  mihin: MyString
+  kulkuneuvo: MyString
+  lahto: 2016-03-23
+  paluu: 2016-03-23
+  matkaseurue: MyText
+  lisatietoja: MyText
